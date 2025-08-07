@@ -107,6 +107,13 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, getString(R.string.no_face_detected), Toast.LENGTH_SHORT).show()
                 } else if (faceBoxes.size > 1) {
                     Toast.makeText(this, getString(R.string.multiple_face_detected), Toast.LENGTH_SHORT).show()
+                    for (i in 0..(faceBoxes.size-1)){
+//                        Log.e("TAG", "------------------- ${i}")
+                        val faceImage = Utils.cropFace(bitmap, faceBoxes[i])
+                        val templates = FaceSDK.templateExtraction(bitmap, faceBoxes[i])
+                        dbManager.insertPerson("Person" + Random.nextInt(10000, 20000), faceImage, templates)
+                        personAdapter.notifyDataSetChanged()
+                    }
                 } else {
                     val faceImage = Utils.cropFace(bitmap, faceBoxes[0])
                     val templates = FaceSDK.templateExtraction(bitmap, faceBoxes[0])
