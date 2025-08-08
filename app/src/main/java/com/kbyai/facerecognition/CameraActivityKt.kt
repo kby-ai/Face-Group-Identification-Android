@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Size
 import android.view.View
@@ -202,12 +203,15 @@ class CameraActivityKt : AppCompatActivity() {
                             runOnUiThread {
                                 val tv = findViewById<View>(R.id.notify) as TextView
                                 val identifiedPerson = maximiarlityPerson
+
                                 tv.text = "Now one face ${identifiedPerson?.name!!} was identified\nPlease try with 2 faces to get more details "
+                                tv.setTextColor(Color.RED)
                             }
                         } else {
                             runOnUiThread {
                                 val tv = findViewById<View>(R.id.notify) as TextView
                                 tv.text = "Now you are trying with one face\nPlease try with 2 faces to get more details "
+                                tv.setTextColor(Color.RED)
                             }
                         }
                     }
