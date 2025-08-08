@@ -159,18 +159,23 @@ class CameraActivityKt : AppCompatActivity() {
                             runOnUiThread {
                                 val faceImage0 = Utils.cropFace(bitmap, faceBox0)
                                 val intent = Intent(context, ResultActivity::class.java)
-                                intent.putExtra("identified_face_0", faceImage0)
-                                intent.putExtra("enrolled_face_0", identifiedPerson0!!.face)
+//                                intent.putExtra("identified_face_0", faceImage0)
+//                                intent.putExtra("enrolled_face_0", identifiedPerson0!!.face)
                                 intent.putExtra("identified_name_0", identifiedPerson0!!.name)
                                 intent.putExtra("similarity_0", identifiedSimilarity0)
                                 intent.putExtra("liveness_0", faceBox0.liveness)
+
+                                ResultActivity.identified_face_0 = faceImage0
+                                ResultActivity.enrolled_face_0 = identifiedPerson0!!.face
 //                                intent.putExtra("yaw", faceBox.yaw)
 //                                intent.putExtra("roll", faceBox.roll)
 //                                intent.putExtra("pitch", faceBox.pitch)
 
                                 val faceImage1 = Utils.cropFace(bitmap, faceBox1)
-                                intent.putExtra("identified_face_1", faceImage1)
-                                intent.putExtra("enrolled_face_1", identifiedPerson1!!.face)
+//                                intent.putExtra("identified_face_1", faceImage1)
+//                                intent.putExtra("enrolled_face_1", identifiedPerson1!!.face)
+                                ResultActivity.identified_face_1 = faceImage1
+                                ResultActivity.enrolled_face_1 = identifiedPerson1!!.face
                                 intent.putExtra("identified_name_1", identifiedPerson1!!.name)
                                 intent.putExtra("similarity_1", identifiedSimilarity1)
                                 intent.putExtra("liveness_1", faceBox1.liveness)
