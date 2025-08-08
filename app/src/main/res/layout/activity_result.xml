@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,14 +30,40 @@
 
         <ImageView
             android:id="@+id/imageEnrolled"
-            android:layout_width="150dp"
-            android:layout_height="150dp">
+            android:layout_width="100dp"
+            android:layout_height="100dp">
         </ImageView>
 
         <ImageView
             android:id="@+id/imageIdentified"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            >
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytImages1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/lytImages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/imageEnrolled1"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/imageIdentified1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="20dp"
             >
         </ImageView>
@@ -55,7 +81,7 @@
         >
 
         <TextView
-            android:text="Enrolled"
+            android:text="Enrolled 1"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -63,7 +89,35 @@
         </TextView>
 
         <TextView
-            android:text="Identified"
+            android:text="Identified 1"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytImagesTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/lytImages1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <TextView
+            android:text="Enrolled 2"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+        </TextView>
+
+        <TextView
+            android:text="Identified 2"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -75,12 +129,12 @@
         android:id="@+id/textPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Identified: Person1"
+        android:text="Identified 1: Person1"
         android:textSize="18dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="18dp"
         android:layout_marginLeft="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lytImagesTitle"
+        app:layout_constraintTop_toBottomOf="@+id/lytImagesTitle1"
         >
     </TextView>
 
@@ -88,7 +142,7 @@
         android:id="@+id/textSimilarity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Similarity: 0.83"
+        android:text="Similarity 1: 0.83"
         android:textSize="18dp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="24dp"
@@ -101,7 +155,7 @@
         android:id="@+id/textLiveness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Liveness score: 0.83"
+        android:text="Liveness score 1: 0.83"
         android:textSize="18dp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="24dp"
@@ -111,11 +165,12 @@
     </TextView>
 
     <TextView
-        android:id="@+id/textYaw"
+        android:id="@+id/textPerson1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Identified 2: Person1"
         android:textSize="18dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
         android:layout_marginLeft="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLiveness"
@@ -123,27 +178,30 @@
     </TextView>
 
     <TextView
-        android:id="@+id/textRoll"
+        android:id="@+id/textSimilarity1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Similarity 2: 0.83"
         android:textSize="18dp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textYaw"
+        app:layout_constraintTop_toBottomOf="@+id/textPerson1"
         >
     </TextView>
 
     <TextView
-        android:id="@+id/textPitch"
+        android:id="@+id/textLiveness1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Liveness score 2: 0.83"
         android:textSize="18dp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRoll"
+        app:layout_constraintTop_toBottomOf="@+id/textSimilarity1"
         >
     </TextView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
