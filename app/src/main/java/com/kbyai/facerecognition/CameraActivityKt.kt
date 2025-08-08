@@ -122,70 +122,9 @@ class CameraActivityKt : AppCompatActivity() {
             }
 
             if(faceBoxes.size > 0) {
-                if(faceBoxes.size == 2){
-                    val faceBox0 = faceBoxes[0]
-                    val faceBox1 = faceBoxes[1]
-                    if (faceBox0.liveness > SettingsActivity.getLivenessThreshold(context) && faceBox1.liveness > SettingsActivity.getLivenessThreshold(context)) {
-                        val templates0 = FaceSDK.templateExtraction(bitmap, faceBox0)
-                        val templates1 = FaceSDK.templateExtraction(bitmap, faceBox1)
-
-                        var maxSimiarlity0 = 0f
-                        var maximiarlityPerson0: Person? = null
-                        var maxSimiarlity1 = 0f
-                        var maximiarlityPerson1: Person? = null
-
-                        for (person in DBManager.personList) {
-                            val similarity = FaceSDK.similarityCalculation(templates0, person.templates)
-                            if (similarity > maxSimiarlity0) {
-                                maxSimiarlity0 = similarity
-                                maximiarlityPerson0 = person
-                            }
-                        }
-
-                        for (person in DBManager.personList) {
-                            val similarity = FaceSDK.similarityCalculation(templates1, person.templates)
-                            if (similarity > maxSimiarlity1) {
-                                maxSimiarlity1 = similarity
-                                maximiarlityPerson1 = person
-                            }
-                        }
-
-                        if (maxSimiarlity0 > SettingsActivity.getIdentifyThreshold(context) && maxSimiarlity1 > SettingsActivity.getIdentifyThreshold(context)) {
-                            recognized = true
-                            val identifiedPerson0 = maximiarlityPerson0
-                            val identifiedSimilarity0 = maxSimiarlity0
-                            val identifiedPerson1 = maximiarlityPerson1
-                            val identifiedSimilarity1 = maxSimiarlity1
-
-                            runOnUiThread {
-                                val faceImage0 = Utils.cropFace(bitmap, faceBox0)
-                                val intent = Intent(context, ResultActivity::class.java)
-//                                intent.putExtra("identified_face_0", faceImage0)
-//                                intent.putExtra("enrolled_face_0", identifiedPerson0!!.face)
-                                intent.putExtra("identified_name_0", identifiedPerson0!!.name)
-                                intent.putExtra("similarity_0", identifiedSimilarity0)
-                                intent.putExtra("liveness_0", faceBox0.liveness)
-
-                                ResultActivity.identified_face_0 = faceImage0
-                                ResultActivity.enrolled_face_0 = identifiedPerson0!!.face
-//                                intent.putExtra("yaw", faceBox.yaw)
-//                                intent.putExtra("roll", faceBox.roll)
-//                                intent.putExtra("pitch", faceBox.pitch)
-
-                                val faceImage1 = Utils.cropFace(bitmap, faceBox1)
-//                                intent.putExtra("identified_face_1", faceImage1)
-//                                intent.putExtra("enrolled_face_1", identifiedPerson1!!.face)
-                                ResultActivity.identified_face_1 = faceImage1
-                                ResultActivity.enrolled_face_1 = identifiedPerson1!!.face
-                                intent.putExtra("identified_name_1", identifiedPerson1!!.name)
-                                intent.putExtra("similarity_1", identifiedSimilarity1)
-                                intent.putExtra("liveness_1", faceBox1.liveness)
-                                startActivity(intent)
-                            }
-                        }
-                    }
-                } else {
-                    val faceBox = faceBoxes[0]
+                var idNameList: String = ""
+                for (i in 0 until faceBoxes.size){
+                    val faceBox = faceBoxes[i]
                     if (faceBox.liveness > SettingsActivity.getLivenessThreshold(context)) {
                         val templates = FaceSDK.templateExtraction(bitmap, faceBox)
 
@@ -200,23 +139,17 @@ class CameraActivityKt : AppCompatActivity() {
                         }
 
                         if (maxSimiarlity > SettingsActivity.getIdentifyThreshold(context)){
-                            runOnUiThread {
-                                val tv = findViewById<View>(R.id.notify) as TextView
-                                val identifiedPerson = maximiarlityPerson
-
-                                tv.text = "Now one face ${identifiedPerson?.name!!} was identified\nPlease try with 2 faces to get more details "
-                                tv.setTextColor(Color.RED)
-                            }
-                        } else {
-                            runOnUiThread {
-                                val tv = findViewById<View>(R.id.notify) as TextView
-                                tv.text = "Now you are trying with one face\nPlease try with 2 faces to get more details "
-                                tv.setTextColor(Color.RED)
-                            }
+                            idNameList += maximiarlityPerson?.name!! + "\n"
                         }
                     }
                 }
-
+                for (j in 0 until faceBoxes.size){
+                    runOnUiThread {
+                        val tv = findViewById<View>(R.id.notify) as TextView
+                        tv.text = idNameList
+                        tv.setTextColor(Color.MAGENTA)
+                    }
+                }
             }
         }
     }
