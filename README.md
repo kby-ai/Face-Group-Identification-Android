@@ -69,7 +69,7 @@ This repository demonstrates `face group identification` that identifies a perso
 
 ## SDK License
 
-- The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-Android/blob/5fe18bcd2b9090354e7474dd95c014f50d3dd4db/app/src/main/java/com/kbyai/facerecognition/MainActivity.kt#L33-L43
+- The code below shows how to use the license: https://github.com/kby-ai/Face-Group-Identification-Android/blob/5f87fedfe3a095c15bad87880bff559f44e6b4f6/app/src/main/java/com/kbyai/facerecognition/MainActivity.kt#L33-L43
 
 - To request a license, please contact us:</br>
 🧙`Email:` contact@kby-ai.com</br>
