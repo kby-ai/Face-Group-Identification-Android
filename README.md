@@ -54,7 +54,7 @@ This repository demonstrates `face group identification` that identifies a perso
   |------------------|------------------|------------------|
   | 1        | [Face Liveness Detection - Android](https://github.com/kby-ai/FaceLivenessDetection-Android)    | Basic SDK |
   | 2        | [Face Liveness Detection - iOS](https://github.com/kby-ai/FaceLivenessDetection-iOS)    | Basic SDK |
-  | ➡️        | <b>[Face Recognition + Face Liveness Detection - Android](https://github.com/kby-ai/FaceRecognition-Android)</b>    | <b>Standard SDK</b> |
+  | 3        | [Face Recognition + Face Liveness Detection - Android](https://github.com/kby-ai/FaceRecognition-Android)    | Standard SDK |
   | 4        | [Face Recognition + Face Liveness Detection - iOS](https://github.com/kby-ai/FaceRecognition-iOS)    | Standard SDK |
   | 5        | [Face Recognition + Face Liveness Detection - Flutter](https://github.com/kby-ai/FaceRecognition-Flutter)        | Standard SDK |
   | 6        | [Face Recognition + Face Liveness Detection - Ionic-Cordova](https://github.com/kby-ai/FaceRecognition-Ionic-Cordova)        | Standard SDK |
@@ -62,6 +62,7 @@ This repository demonstrates `face group identification` that identifies a perso
   | 8        | [Face Attribute - Android](https://github.com/kby-ai/FaceAttribute-Android)        | Premium SDK |
   | 9        | [Face Attribute - iOS](https://github.com/kby-ai/FaceAttribute-iOS)        | Premium SDK |
   | 10        | [Face Attribute - Flutter](https://github.com/kby-ai/FaceAttribute-Flutter)        | Premium SDK |
+  | ➡️        | <b>[Face Group Identification - Android](https://github.com/kby-ai/Face-Group-Identification-Android)</b>    |  |
 
 
  > To get `Face SDK(server)`, please visit products [here](https://github.com/kby-ai/Product).<br/>
