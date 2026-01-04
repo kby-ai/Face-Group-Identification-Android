@@ -75,7 +75,7 @@ This repository demonstrates `face group identification` that identifies a perso
 🧙`Email:` contact@kby-ai.com</br>
 🧙`Telegram:` [@kbyaisupport](https://t.me/kbyaisupport)</br>
 🧙`WhatsApp:` [+19092802609](https://wa.me/+19092802609)</br>
-🧙`Discord:` [KBY-AI](https://discord.gg/vBUMRJJe)</br>
+🧙`Discord:` [KBY-AI](https://discord.gg/6wm383re2s)</br>
 🧙`Teams:` [KBY-AI](https://teams.live.com/l/invite/FBAYGB1-IlXkuQM3AY)</br>
 
 ## About SDK
